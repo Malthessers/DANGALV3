@@ -33,6 +33,8 @@ header{
     background: transparent;
     padding: 20px 14%;
     transition: all .35s ease;
+    border-bottom: none;
+    margin-bottom: 0;
 }
 .logo{
     font-size: 28px;
@@ -123,7 +125,6 @@ section{
 header.sticky{
     background: var(--bg-color);
     padding: 14px 14%;
-    box-shadow: 0px 0px 10px rgb(0 0 0 /105);
 }
 
 .center-text{
@@ -210,4 +211,248 @@ header.sticky{
     line-height: 1.2;
     letter-spacing: .6rem;
     margin-bottom: 30px;
+}
+
+.new-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 1.3rem;
+    align-items: center;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.box{ /* would honestly opt for longer pictures so go for more length? */
+    position: relative;
+    transition: all .40s ease;
+}
+.box img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.box h5{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.box h6{
+    font-size: 16px;
+    font-weight: 700;
+}
+.box h4{
+    position: absolute;
+    top: 0;
+    Left: 0;
+    width: 60px;
+    height: 30px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.box:hover{
+    transform: scale(0.9) translateY(-5px);
+    cursor: pointer;
+}
+.brand{
+    padding: 50px 14%;
+}
+.brand-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.main img{
+    width: 100%;
+    height: auto;
+    opacity: 0.6;
+    transition: all .35s ease;
+    cursor: pointer;
+}
+
+.main img:hover{
+    opacity: 1;
+}
+
+.contact{
+    background: var(--text-color);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 2rem;
+}
+.main-contact h3{
+    font-size: 23px;
+    margin-bottom: 1.6rem;
+    color: var(--bg-color);
+}
+.main-contact h5{
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;  
+}
+.icons{
+    display: flex;
+    margin-top: 2rem;
+}
+.icons i{
+    font-size: 25px;
+    margin-right: 1rem;
+    color: #555;
+    transition: .35s ease;
+}
+.icons i:hover{
+    color: var(--bg-color);
+    transform: scale(1.1) translateY(-5px);
+}
+.main-contact li{
+    margin-bottom: 15px;
+}
+.main-contact li a{
+    display: block;
+    color: #555;
+    font-size: var(--normal-font);
+    font-weight: 600;
+    transform: all .35s ease;
+    text-decoration: none;
+}
+
+.main-contact li a:hover{
+    transform: translateX(8px);
+    color: var(--bg-color);
+}
+.last-text{
+    text-align: center;
+    padding: 20px;
+    background-color: var(--text-color);
+}
+.last-text p{
+    color: #555;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 1000px){
+    header{
+        padding: 7px 4%;
+        transition: .2s;
+    }
+    header.sticky{
+        padding: 14px 4%;
+        transition: .2s;
+    }
+    section{
+        padding: 80px 4%;
+        transition: .1s;
+    }
+}
+
+@media (max-width: 670px){
+    #menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+    .header-icons{
+        display: inline-flex;
+    }
+    .navlist{
+        position: absolute;
+        top: 100%;
+        left:-100%;
+        width: 280px;
+        height: 120vh;
+        background: var(--bg-color);
+        color: var(--sub-color);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 150px 30px;
+        transition: all.35s;
+    }
+    .navlist a{
+        display: block;
+        margin: 1.2rem 0;
+    }
+    .navlist.open{
+        left: 0;
+
+    }
+}
+
+/* Subheader */
+.subheader {
+    width: 100%;
+    top: 70px; /* Position below the header */
+    right: 0;
+    top: calc(69px + 0.008rem);
+    border-top: none;
+    background: transparent;
+    margin-top: 0;
+    z-index: 999;
+    position: fixed;
+    display: flex;
+    justify-content: center; /* Center align */
+    align-items: center;
+    padding: 10px 14%;
+    transition: all 0.35s ease;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    
+}
+.show-subheader {
+    opacity: 1;
+    pointer-events: all;
+    background: var(--bg-color);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.subheader ul {
+    display: flex;
+    list-style: none;
+    gap: 50px; /* Adjust spacing */
+    margin: 0;
+    padding: 0;
+}
+
+.subheader ul li {
+    display: inline;
+}
+
+.subheader ul li a {
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+    transition: all 0.36s ease;
+    align-items: center;
+    
+    
+}
+
+.subheader ul li a:hover {
+    color: var(--main-color);
+}
+
+/* Sticky Effect */
+header.sticky {
+    background: var(--bg-color); /* Light background when scrolled */
+    padding: 15px 14%;
+    
+    
+}
+
+.subheader.sticky {
+    background: var(--bg-color); 
+    padding: 14px 14%;
+    
+}
+.subheader li{
+    padding: 10px 25px; /* Adjust vertical spacing */
 }
